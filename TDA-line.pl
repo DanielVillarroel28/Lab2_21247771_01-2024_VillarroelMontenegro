@@ -15,7 +15,7 @@ sumcost([Section|Resto],TotalCost):-
 length([], 0).
 length([_|Resto], Length) :-
     length(Resto, Acc),
-    Largo is Acc + 1.
+    length is Acc + 1.
 
 lineLength(Line,Length,Distance,Cost) :-
     line(_, _, _, Sections, Line),
