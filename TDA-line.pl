@@ -35,14 +35,4 @@ connects(Section, Station1, Station2) :-
 lineSectionLength(_, StationName, StationName, [], 0, 0).
 
 lineSectionLength(Line, StartName, EndName, Secciones, TotalDistance, TotalCost) :-
-    station_id(StartName, Name1),
-    station_id(EndName, EndID),
-    line(_, _, _, Sections, Line),
-    connects(Sections, StartName, NextStation),
-    getdistance(Section, Distance),
-    getcost(Section, Cost),
-    station(NextStation, NextStationName, _, _, _),
-    lineSectionLength(Line, NextStationName, EndName, RestSections, RestDistance, RestCost),
-    TotalDistance is Distance + RestDistance,
-    TotalCost is Cost + RestCost.
-
+    line(_,_,_,
