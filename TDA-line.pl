@@ -1,5 +1,16 @@
 line(Id,Name,RailType,Sections,[Id,Name,RailType,Sections]).
 
+getId(Line,Id):-
+    line(Id,_,_,_,Line).
+
+getName(Line,Name):-
+    line(_,Name,_,_,Line).
+
+getRailType(Line,RailType):-
+    line(_,_,RailType,_,Line).
+
+getSections(Line,Sections):-
+    line(_,_,_,Sections,Line).
 
 sumadis([], 0).
 sumadis([Section|Resto],TotalDistance) :-
@@ -20,19 +31,31 @@ largo([_|Resto], Largo) :-
 
 
 lineLength(Line,Length,Distance,Cost) :-
-    line(_, _, _, Sections, Line),
+    getSections(Line,Sections),
     largo(Sections,Length),
     sumacost(Sections,Cost),
     sumadis(Sections,Distance).
 
 
-station_id(Name, ID) :-
-    station(ID, Name, _, _, _).
-
-connects(Section, Station1, Station2) :-
-    section(Station1, Station2, _, _, Section).
 
 lineSectionLength(_, StationName, StationName, [], 0, 0).
 
 lineSectionLength(Line, StartName, EndName, Secciones, TotalDistance, TotalCost) :-
-    line(_,_,_,
+    station_id(StartName, Name1),
+    station_id(EndName, EndID),
+    line(_, _, _, Sections, Line),
+    connects(Sections, StartName, NextStation),
+    getdistance(Section, Distance),
+    getcost(Section, Cost),
+    station(NextStation, NextStationName, _, _, _),
+    lineSectionLength(Line, NextStationName, EndName, RestSections, RestDistance, RestCost),
+    TotalDistance is Distance + RestDistance,
+    TotalCost is Cost + RestCost.
+
+lineAddSection(Line,Section,LineOut):-
+    getId(Line,Id),
+    getName(Line,Name),
+    getRailType(Line,RailType),
+    getSections(Line,Sections),
+    line(Id,Name,RailType,[Sections|Section],Line).
+
