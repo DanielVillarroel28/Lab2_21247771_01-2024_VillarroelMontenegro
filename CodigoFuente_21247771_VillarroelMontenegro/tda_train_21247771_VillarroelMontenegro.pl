@@ -1,3 +1,5 @@
+:- module(tda_tain_21247771_VillarroelMontenegro,[train/6,getIdT/2,getMaker/2,getRailTypeT/2,getSpeed/2,getPcars/2,trainAddCar/4,sumaCapacity/2,trainCapacity/2]).
+
 train(Id,Maker,RailType,Speed,Pcars,[Id,Maker,RailType,Speed,Pcars]).
 
 getIdT(Train,Id):-
@@ -6,7 +8,7 @@ getIdT(Train,Id):-
 getMaker(Train,Maker):-
     train(_,Maker,_,_,_,Train).
 
-getRailType(Train,RailType):-
+getRailTypeT(Train,RailType):-
     train(_,_,RailType,_,_,Train).
 
 getSpeed(Train,Speed):-
@@ -23,7 +25,21 @@ trainAddCar(Train,Pcar,Position,Train_New):-
     getRailType(Train,RailType),
     getSpeed(Train,Speed),
     getPcars(Train,Pcars),
-    train(Id,Maker,RailType,Speed,[Pcars|Pcar],Train_New).
+    append(Pcars,[Pcar],NewPcar),
+    train(Id,Maker,RailType,Speed,NewPcar,Train_New).
+
+trainRemoveCar(Train,Position,TrainOut):-
+    getIdT(Train,Id),
+    getMaker(Train,Maker),
+    getRailType(Train,RailType),
+    getSpeed(Train,Speed),
+    getPcars(Train,Pcars).
+
+
+isTrain(Train):-
+    getPcars(Train,Pcars),
+    getModel(Pcars,Model),
+    member(Model,Model).
 
 sumaCapacity([],0).
 sumaCapacity([Pcar|Resto],TotalCapacity):-

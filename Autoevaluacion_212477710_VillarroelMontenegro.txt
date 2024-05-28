@@ -1,0 +1,34 @@
+Autoevaluacion Lab2 Paradigma de Programacion
+Estudiante: Daniel Villarroel Montenegro
+RUT: 21.247.771-0
+
+Requerimientos No funcionales (La puntacion maxima definida en esta autoevaluacion es 1)
+
+Lenguaje				1
+Versión					1
+Standard				1
+Documentación			        1
+Organización			        1 
+Historial				1
+Script de pruebas		        1
+Prerrequisitos			        0.5 (No se definieron todos los prerequisitos dispuestos)
+
+
+Requerimiento Funcionales
+
+TDA-station - Constructor                       1		Implementado Completamente
+TDA-section - COnstructor                       1		Implementado Completamente
+TDA-line                			
+	TDA-line Constructor			1		Implementado Completamente
+	TDA-line Otros Predicados/Funciones     0.5	        Implementado Parcialmente (1 de 2 implementados correctamente)
+	TDA-Modifcador         			1		Implementado Completamente
+	TDA-Pertenencia				0.2 	        Implementado Incorrectamente (Realizado parcialmente , pero no devuelve respuesta esperada)
+TDA-pcar - Constructor				1 		Implementado Completamente
+TDA-train 
+	TDA-train Constructor 			1 		Implementado Completamente
+	TDA-train Modificador			0.5		Implementado Parcialmente (1 de 2 implementados correctamente)
+	TDA-train Pertenencia 			0.1		Implementado Incorrectamente (Realizado parcialmente y no devuelve respuesta esperada)
+	TDA-train Otros Predicados/Funciones  	1		Implementado Completamente
+TDA-driver - Constructor 			1		Implementado Completamente
+TDA-subway - Constructor			1		Implementado Completamente
+

@@ -1,1 +1,9 @@
 Intrucciones de Uso para Laboraotorio 2
+
+Todo el codigo fuente se encunetra en la carpeta, donde se ubicaran los distintos TDA , como el tda_main, para la consulta
+
+Consideraciones:
+
+-Para la realizacion de este laboratorio los tipos de estacion , rieles, etc, estan definidos como string para evitar complicaciones al momento de las consultas y demas.
+
+-Realizado y probado en SWI-Prolog 9.2.5 , ejecutado en Linux Ubuntu

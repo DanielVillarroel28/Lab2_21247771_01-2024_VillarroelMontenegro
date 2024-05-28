@@ -1,6 +1,7 @@
+:- module(tda_pcar_21247771_VillarroelMontenegro,[pcar/5,getIdP/2,getCapacity/2,getModel/2,getType/2]).
 pcar(Id,Capacity,Model,Type,[Id,Capacity,Model,Type]).
 
-getId(Pcar,Id):-
+getIdP(Pcar,Id):-
     pcar(Id,_,_,_,Pcar).
 
 getCapacity(Pcar,Capacity):-
